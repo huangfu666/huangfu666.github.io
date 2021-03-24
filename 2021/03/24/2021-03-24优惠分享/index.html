@@ -115,6 +115,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -129,14 +130,14 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-discount">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+    <a href="/discount/" rel="section"><i class="fa fa-thumbs-up fa-fw"></i>优惠</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-resource">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/resource/" rel="section"><i class="fa fa-inbox fa-fw"></i>资源</a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -149,11 +150,45 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
 
 </div>
     </header>
@@ -380,30 +415,31 @@
         </div>
           
   
-<div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first">
-    </span>
-    <span class="toggle-line toggle-line-middle">
-    </span>
-    <span class="toggle-line toggle-line-last">
-    </span>
-</div>
-<aside class="sidebar">
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-            <li class="sidebar-nav-toc">
-                文章目录
-            </li>
-            <li class="sidebar-nav-overview">
-                站点概览
-            </li>
-        </ul>
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-        <div class="site-overview-wrap sidebar-panel">
-            <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="小鱼鱼"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">小鱼鱼</p>
@@ -427,21 +463,11 @@
 
 
 
-        </div>
-        <div class="wechat_mp" style="postion:fixed; bottom:20px;">
-            <span>
-                扫一扫关注我的公众号
-            </span>
-            <br>
-                <!-- 这里添加你的二维码图片 -->
-                <img src="/images/wxmp.png ">
-                </img>
-            </br>
-        </div>
+      </div>
+
     </div>
-</aside>
-<div id="sidebar-dimmer">
-</div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
       </div>
@@ -518,6 +544,13 @@
 
   
 
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
 
 
 
